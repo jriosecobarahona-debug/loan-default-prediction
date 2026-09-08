@@ -1,29 +1,45 @@
-# 🏦 Análisis y Predicción de Default de Préstamos Bancarios
+# Análisis y Predicción de Default de Préstamos Bancarios
 
-## 📌 Descripción del Proyecto
+## Descripción del Dataset
 
-Este proyecto tiene como objetivo **predecir la probabilidad de impago (default)** de solicitantes de préstamos utilizando técnicas de **Machine Learning**.
-
-## 📊 Resumen del Dataset
-
-- **Fuente:** Kaggle - Loan Default Dataset
+- **Nombre:** Loan Default Dataset
+- **Fuente:** [Kaggle - Loan Default Dataset](https://www.kaggle.com/datasets/yasserh/loan-default-dataset)
 - **Tamaño:** 148,670 registros y 34 variables
 - **Variable Objetivo:** `status` (0 = Pagado, 1 = Impago)
-- **Desbalance de Clases:** 75.4% Pagados vs 24.6% Impagos
+- **Tipo de Tarea:** Clasificación Binaria
 
-## 🚀 Resultados Clave
+## Metodología Resumida
 
-### 📈 Rendimiento de Modelos (Conjunto de Test)
+1. **EDA:** Análisis de nulos, outliers, balance de clases y correlaciones.
+2. **Preprocesamiento:** Pipeline con imputación (mediana/moda) y escalado (RobustScaler).
+3. **PCA:** Reducción a 34 componentes (90% de varianza explicada).
+4. **Clustering:** K-Means con K=2 (Silhouette Score: 0.9426).
+5. **Modelado:** Regresión Logística y Random Forest con GridSearchCV.
+6. **Evaluación:** Métricas de clasificación y curvas ROC.
 
-| Modelo | Accuracy | F1-Score | ROC-AUC | Tiempo (s) |
-|--------|----------|----------|---------|------------|
-| Logistic Regression | 0.8390 | 0.6852 | 0.8675 | 404.0 |
-| Random Forest | 0.9995 | 0.9990 | 1.0000 | 1426.2 |
+## Resultados del Mejor Modelo
 
-✅ **El modelo Random Forest logra un rendimiento casi perfecto**.
+| Métrica | Valor |
+|---------|-------|
+| **Modelo** | Random Forest |
+| **Accuracy** | 0.9995 |
+| **F1-Score** | 0.9990 |
+| **ROC-AUC** | 1.0000 |
+| **Tiempo de entrenamiento** | 1426.2 segundos |
 
-## 👨‍💻 Autor
+✅ **Random Forest fue seleccionado como el mejor modelo por su rendimiento superior.**
 
-**Juan Rioseco**
+## Video de Presentación
 
-- 🔗 GitHub: [https://github.com/TU_USUARIO](https://github.com/TU_USUARIO)
+[Enlace al video](https://youtu.be/TU_ENLACE_AQUI)
+
+## Cómo Reproducir el Análisis
+
+```bash
+# Clonar el repositorio
+git clone https://github.com/jriosecobarahona-debug/loan-default-prediction.git
+
+# Instalar dependencias
+pip install -r requirements.txt
+
+# Abrir el notebook en Jupyter o Colab
